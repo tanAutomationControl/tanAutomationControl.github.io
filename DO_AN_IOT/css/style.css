@@ -224,7 +224,6 @@ section{
 
 .home{
     min-height: 100vh;
-    display: flex;
     align-items: center;
     background:url(../images/giphy.gif) no-repeat;
     
@@ -233,11 +232,12 @@ section{
 }
 
 .home .content{
+    
     max-width: 60rem;
 }
 
 .home .content h3{
-    margin-top: 50%;
+    margin-top: 20%;
     font-size: 300%;
     text-transform: uppercase;
     color:#ffffff;
@@ -643,14 +643,15 @@ background-size: auto;
 border-radius: 5px; 
 }
 .imagehome{
-    
-    height: 100%;
-    width: 100%;
+    margin-top: 15% ;
+    height:0;
+    width:0;
 }
 
 .slider_2{
+    
+    box-shadow: 0 5px 25px rgb(255, 255, 255);
     margin-left: 50px;
-    border: 10px solid #ffffff;
     width: 500px;
     height: 300px;
     border-radius: 5%;

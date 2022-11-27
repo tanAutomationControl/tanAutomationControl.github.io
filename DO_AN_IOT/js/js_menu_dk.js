@@ -11,13 +11,30 @@ const closeBtn1 = document.querySelector(".close-btnpopup1");
 const closeBtn2 = document.querySelector(".close-btnpopup2");
 const closeBtn3 = document.querySelector(".close-btnpopupnavbar");
 const closeBtn4 = document.querySelector(".close-btnpopupnavbar1");
+var firebaseConfig = {
+    apiKey: "AIzaSyBCmk3r6cdX7yZACmcGQyNR7vp9P2Wu0qM",
+    authDomain: "testputgethtml.firebaseapp.com",
+    databaseURL: "https://testputgethtml-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "testputgethtml",
+    storageBucket: "testputgethtml.appspot.com",
+    messagingSenderId: "1027337300110",
+    appId: "1:1027337300110:web:91743d365245cc062541df",
+    measurementId: "G-M6KM6V14CD"
+};
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
 var testtdn = 0;
 var valuemk,valuetdn,valuename,valuenamebt,valuenametemp;
-var tendn='',valbt,valtemp;
+var tendn='admin',valbt,valtemp;
 var checkten, checkdn=0;
 var tdn,mk;
+var dbRef1
+var dbRef2
+var dbRef3
 console.log(checkten);
 function btnclick() {
+    console.log(tdn);
     if(checkdn==0){alert("bạn chưa đăng nhập mời bạn đăng nhập ở mục navbar !")}
     else{popupScreen.classList.add("active");}
     
@@ -32,8 +49,8 @@ function btnclick2() {
 }
 function btnclick3(div1) {
     popupScreen3.classList.add("active");
-    document.querySelector('.imgpopup').innerHTML ='<img src="images/button.PNG" alt="" style="width: 25%;height: 25%;" onclick="addft1('+div1+')">'+
-                                                    '<img src="images/range.PNG" alt="" style="width: 25%;height: 25%;" onclick="addft2('+div1+')">';
+    document.querySelector('.imgpopup').innerHTML ='<img src="https://tanautomationcontrol.github.io/DO_AN_IOT/images/button.PNG" alt="" style="width: 25%;height: 25%;" onclick="addft1('+div1+')">'+
+                                                    '<img src="https://tanautomationcontrol.github.io/DO_AN_IOT/images/range.PNG" alt="" style="width: 25%;height: 25%;" onclick="addft2('+div1+')">';
 
 }
 
@@ -212,6 +229,15 @@ function send1() {
     valuetdn =  firebase.database().ref('USER').child(tdn).child('accout');
     valuemk =  firebase.database().ref('USER').child(tdn).child('password');
     valuename =  firebase.database().ref('USER').child(tdn).child('name');
+    dbRef1 = firebase.database().ref().child('USER').child(tdn).child('temp0');
+    dbRef2 = firebase.database().ref().child('USER').child(tdn).child('temp1');
+    dbRef3 = firebase.database().ref().child('USER').child(tdn).child('temp2');
+    var temp0 = document.getElementById('temp0');
+    dbRef1.on('value', snap => temp0.innerText =snap.val());
+    var temp1 = document.getElementById('temp1');
+    dbRef2.on('value', snap => temp1.innerText =snap.val());
+    var temp2 = document.getElementById('temp2');
+    dbRef3.on('value', snap => temp2.innerText =snap.val());
     valuename.on('value',snap =>{
         tendn=snap.val();
     });
@@ -258,5 +284,10 @@ function setdatain(){
                     '<div class="p"></div>'+
                 '</div>'+
             
-            '<a href="https://tanautomationcontrol/PROJECT-IOT.github.io/DO_AN_IOT/TRANG_DIEU_KHIEN.html" class="btn">Đăng Xuất !</a>';
+            '<a href="https://tanautomationcontrol.github.io/DO_AN_IOT/TRANG_DIEU_KHIEN.html" class="btn">Đăng Xuất !</a>';
 }
+
+
+
+
+
