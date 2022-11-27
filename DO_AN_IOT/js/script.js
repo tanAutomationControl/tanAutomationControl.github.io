@@ -17,11 +17,11 @@ window.onscroll = () =>{
     cartItem.classList.remove('active');
 }
 var counter =0;
-                setInterval(function(){
-                    document.getElementById('radio' + counter).checked =true;
-                    counter++;
-                    
-                    if(counter >4){
-                        counter =0;
-                    }
-                },4000);
+setInterval(function(){
+    document.getElementById('radio' + counter).checked =true;
+    counter++;
+    
+    if(counter >4){
+        counter =0;
+    }
+},4000);
