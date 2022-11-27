@@ -18,7 +18,7 @@ window.onscroll = () =>{
 }
 var counter =0;
                 setInterval(function(){
-                    document.getElementById('radio' + counter+'_2').checked =true;
+                    document.getElementById('radio' + counter).checked =true;
                     counter++;
                     
                     if(counter >4){
