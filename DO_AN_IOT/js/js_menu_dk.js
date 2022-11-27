@@ -258,5 +258,5 @@ function setdatain(){
                     '<div class="p"></div>'+
                 '</div>'+
             
-            '<a href="TRANG_DIEU_KHIEN.html" class="btn">Đăng Xuất !</a>';
+            '<a href="https://tanautomationcontrol/PROJECT-IOT.github.io/DO_AN_IOT/TRANG_DIEU_KHIEN.html" class="btn">Đăng Xuất !</a>';
 }
