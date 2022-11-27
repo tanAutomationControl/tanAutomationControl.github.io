@@ -103,6 +103,13 @@ section{
     color:#000000;
 }
 
+.topp{
+    color:var(--main-color);
+    background: #ffffff;
+    border: 0.2rem solid var(--main-color);
+    border-radius: 10px;
+    padding: 1rem;
+}
 .header .navbar a:hover{
     color:var(--main-color);
     background: #ffffff;
@@ -552,19 +559,6 @@ display: flex;
 .footer .credit span{
     color:var(--main-color);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* media queries  */
 @media (max-width:991px){
 
@@ -588,17 +582,7 @@ display: flex;
         display: inline-block;
     }
 
-    .header .navbar{
-        position: absolute;
-        top:100%; right: -100%;
-        background: #ffffff;
-        width: 30rem;
-        height: calc(100vh - 9.5rem);
-    }
-
-    .header .navbar.active{
-        right:0;
-    }
+    
 
     .header .navbar a{
         color: #ffffff;
@@ -606,11 +590,6 @@ display: flex;
         margin:1.5rem;
         padding:.5rem;
         font-size: 2rem;
-    }
-
-    .header .search-form{
-        width: 90%;
-        right: 2rem;
     }
 
     .home{
