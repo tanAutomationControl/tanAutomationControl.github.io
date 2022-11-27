@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IOT SMART TRANG_CHU</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/css_popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/css_button.css">
+    <link rel="stylesheet" href="css/css_range.css">
+</head>
+
+<body>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <div class="popup-screen">
+        
+        <div class="popup-box">
+            <i class="fas fa-times close-btnpopup"></i>
+            <div class="functioniot0">
+
+                <div style="float:right;margin-left:20px;margin-right:20px;">
+                    <img src="images/temp.PNG" alt="" onclick="" style="width:155px; height: 80px;">
+                    <h2 style="margin-top:10px;margin-bottom:10px"> Nhiệt độ phòng khách là : <span id="temp0"></span> ºC</h2>
+                </div>
+
+            </div>
+            <div class="addiot">
+                <i class="fa fa-plus-circle addfunction" onclick="btnclick3(0)"></i>
+            </div>
+        </div>
+    </div>
+    
+    <div class="popup-screen pp1">
+        <div class="popup-box">
+
+            <i class="fas fa-times close-btnpopup1 close-btnpopup"></i>
+            <div class="functioniot1">
+                
+                <div style="float:right;margin-left:20px;margin-right:20px;">
+                    <img src="images/temp.PNG" alt="" onclick="" style="width:155px; height: 80px;">
+                    <h2 style="margin-top:10px;margin-bottom:10px">Nhiệt độ phòng bếp là : <span id="temp1"></span> ºC</h2>
+                </div>
+
+            </div>
+            <div class="addiot">
+                <i class="fa fa-plus-circle addfunction" onclick="btnclick3(1)"></i>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="popup-screen pp2">
+        <div class="popup-box">
+            <i class="fas fa-times close-btnpopup2 close-btnpopup"></i>
+            <div class="functioniot2">
+                
+                <div style="float:right;margin-left:20px;margin-right:20px;">
+                    <img src="images/temp.PNG" alt="" onclick="" style="width:155px; height: 80px;">
+                    <h2 style="margin-top:10px;margin-bottom:10px">Nhiệt độ phòng ngủ là : <span id="temp2"></span> ºC</h2>
+                </div>
+            </div>
+            <div class="addiot">
+                <i class="fa fa-plus-circle addfunction" onclick="btnclick3(2)"></i>
+            </div>
+        </div>
+    </div>
+    <div class="popup-screennavbar ppnavbar">
+        <div class="popup-box">
+
+            <i class="fas fa-times close-btnpopupnavbar close-btnpopup"></i>
+                
+            <div class="imgpopup">
+
+            </div>
+        </div>
+    </div>
+    <div class="popup-screen ppnavbar1">
+        <div class="popup-box">
+
+            <i class="fas fa-times close-btnpopupnavbar1 close-btnpopup"></i>
+                
+            <div class="infobuttonpopup">
+
+            </div>
+        </div>
+    </div>
+    <!-- header section starts  -->
+
+    <header class="header">
+
+        <a href="TRANG_CHU.html" class="logo">
+            <img src="images/ctu.png" alt="">
+        </a>
+
+
+
+        <div class="icons">
+
+            <div class='fa fa-navicon' id="cart-btn"></div>
+            <div id="menu-btn"></div>
+        </div>
+        <div class="cart-items-container">
+            <section class="wrapper" style="background-color:#ffffff; border-radius: 10px;margin-top: 15px;box-shadow: 0 5px 25px rgb(0 0 0 / 50%);">
+                <div class="container">
+                    <div >
+                        <form class="rounded bg-white shadow py-5 px-4">
+                            <h3 style="font-size:20px;">Sign In To Iot Smart Home</h3>
+                            <div style="margin-top:20px">
+                                <input type="text" id="floatingInput" placeholder="abcxyz" >
+                                <label for="floatingInput" style="font-size:10px;">Tên đăng nhập</label>
+                            </div>
+                            <div style="margin-top:20px" >
+                                <input type="password"  id="floatingPassword" placeholder="Password">
+                                <label for="floatingPassword" style="font-size:10px;">Mật khẩu</label>
+                            </div>
+                            <div class="mt-2 text-end" style="float:left; margin-top: 20px;">
+                                <a href="FORM_DK.html" class="text-primary fw-bold text-decoration-none" style="font-size:10px;">Tạo Tài Khoản </a>
+                            </div>
+                            <div class="mt-2 text-end" style="float:right ;margin-top: 20px;">
+                                <a href="FORM_FORGET.html" class="text-primary fw-bold text-decoration-none" style="font-size:10px;">Quên Mật Khẩu?</a>
+                            </div>
+                            <button type="submit" class="btn btn-primary submit_btn w-100 my-4" onclick="send1()"><a href="#"
+                                    style="display: inline-block;
+                             text-align: center;
+                             text-decoration: none;
+                             color: #ffffff;
+                             width: 100%;
+                             padding: 0;
+                             margin: 0;
+                             clear: both;
+                             height: 0;
+                             height: 100%;
+                             outline: none;">Vào!</a></button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+
+    </header>
+    <section class="blogs" id="blogs">
+
+        <h1 class="heading"> our <span>blogs</span> </h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <div class="image">
+                    <img src="images/blog-1.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Phòng Khách</a>
+                    <span class="Temp_pk"></span>
+                    <p></p>
+                    <a href="#" class="btn" onclick="btnclick()">Vào !</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="images/blog-2.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Căn Bếp</a>
+                    <span class="Temp_B"></span>
+                    <p></p>
+                    <a href="#" class="btn" onclick="btnclick1()">Vào !</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="images/blog-3.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Phòng Ngủ</a>
+                    <span class="Temp_N"></span>
+                    <p></p>
+                    <a href="#" class="btn" onclick="btnclick2()">Vào !</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <section class="footer">
+        <div class="credit">created by <span>VNT</span> | unlicensed</div>
+
+    </section>
+    <script type="module">
+
+        var firebaseConfig = {
+            apiKey: "AIzaSyBCmk3r6cdX7yZACmcGQyNR7vp9P2Wu0qM",
+            authDomain: "testputgethtml.firebaseapp.com",
+            databaseURL: "https://testputgethtml-default-rtdb.asia-southeast1.firebasedatabase.app",
+            projectId: "testputgethtml",
+            storageBucket: "testputgethtml.appspot.com",
+            messagingSenderId: "1027337300110",
+            appId: "1:1027337300110:web:91743d365245cc062541df",
+            measurementId: "G-M6KM6V14CD"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        var temp0 = document.getElementById('temp0');
+        var dbRef = firebase.database().ref().child('USER').child('admin').child('temp0');
+        dbRef.on('value', snap => temp0.innerText =snap.val());
+
+        var temp1 = document.getElementById('temp1');
+        var dbRef = firebase.database().ref().child('USER').child('admin').child('temp1');
+        dbRef.on('value', snap => temp1.innerText =snap.val());
+
+        var temp2 = document.getElementById('temp2');
+        var dbRef = firebase.database().ref().child('USER').child('admin').child('temp2');
+        dbRef.on('value', snap => temp2.innerText =snap.val());
+    </script>
+    <!-- footer section ends -->
+    <!-- custom js file link  -->
+    <script type="text/javascript" src="js/js_menu_dk.js">
+    </script>
+    <script>
+                    let navbar = document.querySelector('.navbar');
+
+            document.querySelector('#menu-btn').onclick = () =>{
+                navbar.classList.toggle('active');
+                cartItem.classList.remove('active');
+            }
+
+            let cartItem = document.querySelector('.cart-items-container');
+
+            document.querySelector('#cart-btn').onclick = () =>{
+                cartItem.classList.toggle('active');
+            }
+            
+    </script>
+</body>
+
+</html>
