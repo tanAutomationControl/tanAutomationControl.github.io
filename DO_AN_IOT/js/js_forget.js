@@ -7,7 +7,7 @@ function send() {
     findDateToFirebase(tdn);
 }
 function back(){
-    window.location.href="https://tanautomationcontrol.github.io/DO_AN_IOT/TRANG_CHU.html";
+    window.location.href="https://tanautomationcontrol.github.io/DO_AN_IOT/HOME.html";
 }
 function findDateToFirebase(tdn) {
     valuemk.on('value',snap =>{
