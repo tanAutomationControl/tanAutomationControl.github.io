@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>TRAFFIC_LIGHT</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+
+    <link rel="stylesheet" href="css_button.css">
+
+	
+</head>
+<body> 
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <div><H1>TRAFFIC LIGHT</H1></div>
+	<label class="skeuo switch">
+        <input type="checkbox" id ="my-checkbox" class="skeuo input" onclick="info()">
+        <div class="skeuo rail">
+            <span class="skeuo circle"></span>
+        </div>
+        <span class="skeuo indicator"></span>
+    </label>
+    <div >
+        <h1 style="float:left; height:0px;color: red; text-shadow:0 5px 25px rgb(0 0 0 / 100%);">R1</h1>
+        <h1 style="float:left;height:0px;margin-left: 45px;color: green;text-shadow:0 5px 25px rgb(0 0 0 / 100%);">G1</h1>
+        <h1 style="float:left;height:0px;margin-left: 55px;color: yellow;text-shadow:0 5px 25px rgb(0 0 0 / 100%);">Y1</h1>
+        <h1 style="float:right; height:0px; margin-right: 5px;;color: yellow; text-shadow:0 5px 25px rgb(0 0 0 / 100%);">Y2</h1>
+        <h1 style="float:right;height:0px;margin-right: 55px;color: green;text-shadow:0 5px 25px rgb(0 0 0 / 100%);">G2</h1>
+        <h1 style="float:right;height:0px;margin-right:50px;color: red;text-shadow:0 5px 25px rgb(0 0 0 / 100%);">R2</h1>
+    </div>
+
+<div style="margin-top:50px;">
+    <div class="nbbd">
+        <div style="margin-top: 42px;float: left;">
+            <div class="number6"><H1>0</H1></div>
+        </div>
+        <div style="margin-top: 42px;float: left;">
+            <div class="number7"><H1>0</H1></div>
+        </div>
+    </div>
+    <div class="nbbd">
+        <div style="margin-top: 20px;float: left;margin-left: 50px;">
+            
+            <div> 
+            <button type="reset" onclick="up(2)"><i class='fa fa-sort-up' ></i></button>
+            </div>
+            <div class="number2"><H1>0</H1></div>
+            <button type="reset" onclick="down(2)"><i class='fa fa-sort-desc' ></i></button>
+        </div>
+        <div style="margin-top: 20px;float: left;">
+            <div> 
+            <button type="reset" onclick="up(3)"><i class='fa fa-sort-up' ></i></button>
+            </div>
+            <div class="number3"><H1>0</H1></div>
+            <button type="reset" onclick="down(3)"><i class='fa fa-sort-desc' ></i></button>
+        </div>
+    </div>
+    <div class="nbbd">
+        <div style="margin-top: 20px;float: left;margin-left: 50px;">
+            <div> 
+            <button type="reset" onclick="up(4)"><i class='fa fa-sort-up'></i></button>
+            </div>
+            <div class="number4"><H1>0</H1></div>
+            <button type="reset" onclick="down(4)"><i class='fa fa-sort-desc'></i></button>
+        </div>
+        <div style="margin-top: 20px;float: left;">
+            <div> 
+            <button type="reset" onclick="up(5)"><i class='fa fa-sort-up'></i></button>
+            </div>
+            <div class="number5"><H1>0</H1></div>
+            <button type="reset" onclick="down(5)"><i class='fa fa-sort-desc'></i></button>
+        </div>
+    </div>
+    <div class="nbbd">
+        <div style="margin-top: 20px;float: right;">
+            <div> 
+            <button type="reset" onclick="up(11)"><i class='fa fa-sort-up'></i></button>
+            </div>
+            <div class="number11"><H1>0</H1></div>
+            <button type="reset" onclick="down(11)"><i class='fa fa-sort-desc'></i></button>
+        </div>
+        <div style="margin-top: 20px;float: right;margin-left: 50px;">
+            <div> 
+            <button type="reset" onclick="up(10)"><i class='fa fa-sort-up'></i></button>
+            </div>
+            <div class="number10"><H1>0</H1></div>
+            <button type="reset" onclick="down(10)"><i class='fa fa-sort-desc'></i></button>
+        </div>
+    </div>
+    <div class="nbbd">
+        <div style="margin-top: 20px;float: right;">
+            <div> 
+            <button type="reset" onclick="up(9)"><i class='fa fa-sort-up'></i></button>
+            </div>
+            <div class="number9"><H1>0</H1></div>
+            <button type="reset" onclick="down(9)"><i class='fa fa-sort-desc'></i></button>
+        </div>
+        <div style="margin-top: 20px;float: right;margin-left: 50px;">
+            <div> 
+            <button type="reset" onclick="up(8)"><i class='fa fa-sort-up'></i></button>
+            </div>
+            <div class="number8"><H1>0</H1></div>
+            <button type="reset" onclick="down(8)"><i class='fa fa-sort-desc'></i></button>
+        </div>
+    </div>
+    <div class="nbbd">
+    <div style="margin-top: 42px;float: right;">
+        <div class="number0"><H1>0</H1></div>
+    </div>
+    <div style="margin-top: 42px;float: right;">
+        <div class="number1"><H1>0</H1></div>
+    </div>
+    </div>
+</div>
+<div style="margin:50px auto; margin-top: 250px;">
+    <a href="#" class="btnbtuton" onclick="setsend() " >SEND FIREBASE</a>
+</div>
+<script type="module">
+
+    var firebaseConfig = {
+        apiKey: "AIzaSyBCmk3r6cdX7yZACmcGQyNR7vp9P2Wu0qM",
+        authDomain: "testputgethtml.firebaseapp.com",
+        databaseURL: "https://testputgethtml-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "testputgethtml",
+        storageBucket: "testputgethtml.appspot.com",
+        messagingSenderId: "1027337300110",
+        appId: "1:1027337300110:web:91743d365245cc062541df",
+        measurementId: "G-M6KM6V14CD"
+    };
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+</script>
+<script type="text/javascript" src="js_button.js"></script>
+</body>
+</html>
+
