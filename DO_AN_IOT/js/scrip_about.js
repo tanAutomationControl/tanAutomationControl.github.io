@@ -61,30 +61,5 @@ function ifm(a){
     +'<a href="'+thanhvien[a].id+'" class="btn" style="border-radius: 10px;">more</a>';
     }
 }
-var counter =0;
-                setInterval(function(){
-                    if(counter != 0){
-                        text.innerHTML = '<h3 >'+thanhvien[counter].name+'</h3>'
-                    +'<p>Ngày Sinh: '+thanhvien[counter].date+'</p>'
-                    +'<p>Giới Tính: '+thanhvien[counter].gt+'</p>'
-                    +'<p>Quê Quán: '+thanhvien[counter].quequan+'</p>'
-                    +'<p>Ngành Học: '+thanhvien[counter].nganh+'</p>'
-                    +'<p>Trường: '+thanhvien[counter].khoa+'</p>'
-                    +'<p>Sở Thích: '+thanhvien[counter].sothich+'</p>'
-                    +'<div  class="btn" style="border-radius: 10px;" >more</div>';
-                    }
-                    else
-                    {
-                        text.innerHTML = '<h3 >'+thanhvien[counter].name+'</h3>' 
-                    }
-                    
-                    document.getElementById('radio' + counter).checked =true;
-                    counter++;
-                    
-                    if(counter >4){
-                        counter =0;
-                    }
-                },4000);
-
 
 
