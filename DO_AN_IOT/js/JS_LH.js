@@ -13,7 +13,7 @@ function send() {
             Username : "tanb1912976@student.ctu.edu.vn",
             Password : "7885DC9F831E1B7625519917861ED5A94B47",
             To : 'tanb1912976@student.ctu.edu.vn',
-            From : mail1,
+            From : document.getElementById("email").value,
             Subject : "Contact Form",
             Body : "Khách Hàng:"+Ho+ten+"Số Điện Thoại :"+sdt+"Có Câu hỏi:"+msg
         }).then(
