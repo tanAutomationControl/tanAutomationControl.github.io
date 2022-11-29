@@ -50,7 +50,7 @@ function btnclick2() {
 function btnclick3(div1) {
     popupScreen3.classList.add("active");
     document.querySelector('.imgpopup').innerHTML ='<img src="https://tanautomationcontrol.github.io/DO_AN_IOT/images/button.PNG" alt="" style="width: 25%;height: 25%;" onclick="addft1('+div1+')">'+
-                                                    '<img src="https://tanautomationcontrol.github.io/DO_AN_IOT/images/range.PNG" alt="" style="width: 25%;height: 25%;" onclick="addft2('+div1+')">';
+                                                    '<img src="https://tanautomationcontrol.github.io/DO_AN_IOT/images/range.png" alt="" style="width: 25%;height: 25%;" onclick="addft2('+div1+')">';
 
 }
 
@@ -286,8 +286,3 @@ function setdatain(){
             
             '<a href="https://tanautomationcontrol.github.io/DO_AN_IOT/HOME.html" class="btn">Đăng Xuất !</a>';
 }
-
-
-
-
-
