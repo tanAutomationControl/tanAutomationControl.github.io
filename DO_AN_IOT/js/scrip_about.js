@@ -8,7 +8,7 @@ var thanhvien2 ={
     gt:'Nam',
     quequan:'Bến Tre',
     nganh:'KTDK - TDH',
-    khoa:'Đại Học Bách Khóa',
+    khoa:'Bách Khóa',
     sothich:'Đọc Sách, Xem Phim, Code Dạo, Khám Phá'
 
 };
@@ -19,7 +19,7 @@ var thanhvien3 ={
     gt:'Nữ',
     quequan:'An Giang',
     nganh:'Quản Lí Công Nghiệp',
-    khoa:'Đại Học Bách Khoa',
+    khoa:'Bách Khoa',
     sothich:'Làm Bánh Kem'
 
 };
@@ -30,7 +30,7 @@ var thanhvien4 ={
     gt:'Nữ',
     quequan:'Kiên Giang',
     nganh:'Quản Lí Công Nghiệp',
-    khoa:'Đại Học Bách Khoa',
+    khoa:'Bách Khoa',
     sothich:'Xem Phim Hàn Quốc'
 
 };
@@ -41,7 +41,7 @@ var thanhvien5 ={
     gt:'Nữ',
     quequan:'Kiên Giang',
     nganh:'Quản Lí Công Nghiệp',
-    khoa:'Đại Học Bách Khoa',
+    khoa:'Bách Khoa',
     sothich:'Xem Phim Hàn Quốc'
 
 };
