@@ -808,3 +808,7 @@ display: flex;
 .snip1361.hover figcaption {
   top: 80px;
 }
+th{font-size: 20px;}
+td{
+    font-size: 20px;
+}
