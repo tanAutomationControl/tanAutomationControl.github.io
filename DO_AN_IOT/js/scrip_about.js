@@ -1,5 +1,5 @@
 var thanhvien1 ={
-    name:'ĐÂY LÀ PHẦN GIỚI THIỆU VỀ THÔNG TIN NHÓM 7',
+    name:'ĐÂY LÀ PHẦN GIỚI THIỆU VỀ THÔNG TIN NHÓM 5',
 };
 var thanhvien2 ={
     id: 1,
