@@ -1,25 +1,64 @@
-body { margin:0;}
-section {
-  padding: 5em 1em;
-  display:flex;
-  justify-content: center;
-  align-items: center;
-}
-section > div {
-  margin: 2 em;
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
+*
+{
+  margin : 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 
 }
-section:nth-child(1){
-  background:#f1f1f1;
+body
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #edf1f4;
 }
-section:nth-child(2){
-  background: radial-gradient(
-    #333,#111
-  );
+.box
+{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(to bottom,rgba(0,0,0,0.05),#edf1f4);
+  border-radius: 40px;
+  box-shadow: 15px 15px 20px rgba(0,0,0,0.1),
+  -15px -15px 20px #fff;
+
 }
-section:nth-child(3){
+.range
+{
+  width:  400px;
+  height: 15px;
+  appearance: none;
+  background: #edf1f4;
+  outline: none;
+  border-radius: 15px;
+  box-shadow: 5px 5px 5px rgba(0,0,0,0.1),
+  -5px -5px 10px #fff;
+  inset:  5px 5px 5px rgba(0,0,0,0.1);
+}
+.range ::-webkit-slider-thumb
+{
+  appearance:none;
+  width: 15px;
+  height: 15px;
   background: #fff;
+  border-radius: 50%;
+  box-shadow: -407px 0 0 400px #27a0ff;
+  cursor: pointer;
+
 }
-section:nth-child(4){
-  background: #161313;
+#rangeValue
+{
+  position: relative;
+  text-align: center;
+  width: 60px;
+  font-size: 1.25 em;
+  color: #fff;
+  background: #27a0ff;
+  margin-left: 15px;
+  border-radius: 25px;
 }
