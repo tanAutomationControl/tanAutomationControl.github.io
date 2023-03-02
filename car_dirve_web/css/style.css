@@ -15,8 +15,26 @@ body
   min-height: 100vh;
   background: #edf1f4;
 }
+.value1{
+  transform: rotate(90deg);
+}
 .box
 {
+  transform: rotate(270deg);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(to bottom,rgba(0,0,0,0.05),#edf1f4);
+  border-radius: 40px;
+  box-shadow: 15px 15px 20px rgba(0,0,0,0.1),
+  -15px -15px 20px #fff;
+
+}
+.box2
+{
+  
   position: relative;
   display: flex;
   justify-content: center;
@@ -52,6 +70,18 @@ body
 
 }
 #rangeValue
+{
+  position: relative;
+  text-align: center;
+  width: 60px;
+  height: 60px;
+  font-size: 20px;
+  color: #fff;
+  background: #27a0ff;
+  margin-left: 15px;
+  border-radius: 25px;
+}
+#rangeValue2
 {
   position: relative;
   text-align: center;

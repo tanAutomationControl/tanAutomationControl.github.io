@@ -15,14 +15,17 @@
 </head>
 
 <body>
-    <section>
         <div class="box">
             <input type="range" class="range" value="0"
             min="-255" max="255" onmousemove="rangeSlider(this.value)"> 
-            <span id="rangeValue">0</span>
+            <span id="rangeValue" class="value1"> 0</span>
+            
         </div>
-        
-    </section>
+        <div class="box2">
+            <input type="range" class="range" value="0"
+            min="-75" max="75" onmousemove="rangeSlider2(this.value)"> 
+            <span id="rangeValue2">0</span>
+        </div>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>

@@ -17,3 +17,9 @@ function rangeSlider (value){
   console.log(value);
   firebase.database().ref().child('PWM').set(Number(value));
 }
+function rangeSlider2 (value){
+  document.getElementById('rangeValue2').innerHTML
+  =value;
+  console.log(value);
+    firebase.database().ref().child('PWM2').set(75+Number(value));
+}
