@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IOT SMART HOME</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/css_popup.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="https://tanautomationcontrol.github.io/DO_AN_IOT/css/style.css">
+    <link rel="stylesheet" href="https://tanautomationcontrol.github.io/DO_AN_IOT/css/css_button.css">
+    <link rel="stylesheet" href="https://tanautomationcontrol.github.io/DO_AN_IOT/css/css_range.css">
+</head>
+
+<body>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <div class="popup-screen">
+        
+        <div class="popup-box">
+            <i class="fas fa-times close-btnpopup"></i>
+            <div class="functioniot0">
+
+                <div style="float:right;margin-left:20px;margin-right:20px;">
+                    <img src="https://tanautomationcontrol.github.io/DO_AN_IOT/images/temp.png" alt="" onclick="" style="width:155px; height: 80px;">
+                    <h2 style="margin-top:10px;margin-bottom:10px"> Nhiệt độ phòng khách là : <span id="temp0"></span> ºC</h2>
+                </div>
+
+            </div>
+            <div class="addiot">
+                <i class="fa fa-plus-circle addfunction" onclick="btnclick3(0)"></i>
+            </div>
+        </div>
+    </div>
+    
+    <div class="popup-screen pp1">
+        <div class="popup-box">
+
+            <i class="fas fa-times close-btnpopup1 close-btnpopup"></i>
+            <div class="functioniot1">
+                
+                <div style="float:right;margin-left:20px;margin-right:20px;">
+                    <img src="https://tanautomationcontrol.github.io/DO_AN_IOT/images/temp.png" alt="" onclick="" style="width:155px; height: 80px;">
+                    <h2 style="margin-top:10px;margin-bottom:10px">Nhiệt độ phòng bếp là : <span id="temp1"></span> ºC</h2>
+                </div>
+
+            </div>
+            <div class="addiot">
+                <i class="fa fa-plus-circle addfunction" onclick="btnclick3(1)"></i>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="popup-screen pp2">
+        <div class="popup-box">
+            <i class="fas fa-times close-btnpopup2 close-btnpopup"></i>
+            <div class="functioniot2">
+                
+                <div style="float:right;margin-left:20px;margin-right:20px;">
+                    <img src="https://tanautomationcontrol.github.io/DO_AN_IOT/images/temp.png" alt="" onclick="" style="width:155px; height: 80px;">
+                    <h2 style="margin-top:10px;margin-bottom:10px">Nhiệt độ phòng ngủ là : <span id="temp2"></span> ºC</h2>
+                </div>
+            </div>
+            <div class="addiot">
+                <i class="fa fa-plus-circle addfunction" onclick="btnclick3(2)"></i>
+            </div>
+        </div>
+    </div>
+    <div class="popup-screennavbar ppnavbar">
+        <div class="popup-box">
+
+            <i class="fas fa-times close-btnpopupnavbar close-btnpopup"></i>
+                
+            <div class="imgpopup">
+
+            </div>
+        </div>
+    </div>
+    <div class="popup-screen ppnavbar1">
+        <div class="popup-box">
+
+            <i class="fas fa-times close-btnpopupnavbar1 close-btnpopup"></i>
+                
+            <div class="infobuttonpopup">
+
+            </div>
+        </div>
+    </div>
+    <!-- header section starts  -->
+
+    <header class="header">
+
+        <a href="https://en.ctu.edu.vn/" class="logo">
+            <img src="https://tanautomationcontrol.github.io/DO_AN_IOT/images/ctu.png" alt="">
+        </a>
+    
+        <li><a href="https://tanautomationcontrol.github.io/DO_AN_IOT/HOME.html">
+                   <h1 style="color:white; margin-top:0px"> TRANG CHỦ</h1 ></a></li>
+                   
+                <li><a href="https://tanautomationcontrol.github.io/DO_AN_IOT/About.html">
+                    <h1 style="color:white; margin-top:0px">THÀNH VIÊN </h1> 
+                  
+                </a>
+                </li>
+                <li>
+                    <a href="https://tanautomationcontrol.github.io/DO_AN_IOT/TRANG_DIEU_KHIEN.html">
+                  <h1 style="color:rgb(32, 147, 248); margin-top:0px">THIẾT BỊ ĐIỀU KIỂN  </h1>   
+                </a>
+                </li>
+                <li>
+                    <a href="https://tanautomationcontrol.github.io/DO_AN_IOT/LIEN_HE.html">
+                        <h1 style="color:white; margin-top:0px">LIÊN HỆ TRỢ GIÚP</h1>   
+                </a>
+                </li>
+    
+        
+       
+                </div>
+
+        <div class="icons">
+
+            <div class='fa fa-navicon' id="cart-btn"></div>
+            <div id="menu-btn"></div>
+        </div>
+        <div class="cart-items-container">
+            <section class="wrapper" style="background-color:#ffffff; border-radius: 10px;margin-top: 15px;box-shadow: 0 5px 25px rgb(0 0 0 / 50%);">
+                <div class="container">
+                    <div >
+                        <form class="rounded bg-white shadow py-5 px-4">
+                            <h3 style="font-size:20px;">Sign In To Iot Smart Home</h3>
+                            <div style="margin-top:20px">
+                                <input type="text" id="floatingInput" placeholder="abcxyz" >
+                                <label for="floatingInput" style="font-size:10px;">Tên đăng nhập</label>
+                            </div>
+                            <div style="margin-top:20px" >
+                                <input type="password"  id="floatingPassword" placeholder="Password">
+                                <label for="floatingPassword" style="font-size:10px;">Mật khẩu</label>
+                            </div>
+                            <div class="mt-2 text-end" style="float:left; margin-top: 20px;">
+                                <a href="https://tanautomationcontrol.github.io/DO_AN_IOT/FORM_DK.html" class="text-primary fw-bold text-decoration-none" style="font-size:10px;">Tạo Tài Khoản </a>
+                            </div>
+                            <div class="mt-2 text-end" style="float:right ;margin-top: 20px;">
+                                <a href="https://tanautomationcontrol.github.io/DO_AN_IOT/FORM_FORGET.html" class="text-primary fw-bold text-decoration-none" style="font-size:10px;">Quên Mật Khẩu?</a>
+                            </div>
+                            <button type="submit" class="btn btn-primary submit_btn w-100 my-4" onclick="send1()"><a href="#"
+                                    style="display: inline-block;
+                             text-align: center;
+                             text-decoration: none;
+                             color: #ffffff;
+                             width: 100%;
+                             padding: 0;
+                             margin: 0;
+                             clear: both;
+                             height: 0;
+                             height: 100%;
+                             outline: none;">Vào!</a></button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+            
+        </div>
+
+    </header>
+    <section class="blogs" id="blogs">
+
+        <h1 class="heading"> our <span>blogs</span> </h1>
+
+        <div class="box-container">
+
+            <div class="box">
+                <div class="image">
+                    <img src="https://tanautomationcontrol.github.io/DO_AN_IOT/images/blog-1.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Phòng Khách</a>
+                    <span class="Temp_pk"></span>
+                    <p></p>
+                    <a href="#" class="btn" onclick="btnclick()">Vào !</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="https://tanautomationcontrol.github.io/DO_AN_IOT/images/blog-2.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Căn Bếp</a>
+                    <span class="Temp_B"></span>
+                    <p></p>
+                    <a href="#" class="btn" onclick="btnclick1()">Vào !</a>
+                </div>
+            </div>
+
+            <div class="box">
+                <div class="image">
+                    <img src="https://tanautomationcontrol.github.io/DO_AN_IOT/images/blog-3.jpeg" alt="">
+                </div>
+                <div class="content">
+                    <a href="#" class="title">Phòng Ngủ</a>
+                    <span class="Temp_N"></span>
+                    <p></p>
+                    <a href="#" class="btn" onclick="btnclick2()">Vào !</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+<label valu></label>
+    <section class="footer">
+        <div class="credit">TRƯỜNG BÁCH KHOA CÂN THƠ <span>CÔNG NGHỆ IOT VÀ ỨNG DỤNG </span> | NHÓM 5</div>
+
+    </section>
+    <!-- footer section ends -->
+    <!-- custom js file link  -->
+    <script type="text/javascript" src="https://tanautomationcontrol.github.io/DO_AN_IOT/js/js_menu_dk.js">
+    </script>
+    <script>
+                    let navbar = document.querySelector('.navbar');
+
+            document.querySelector('#menu-btn').onclick = () =>{
+                navbar.classList.toggle('active');
+                cartItem.classList.remove('active');
+            }
+
+            let cartItem = document.querySelector('.cart-items-container');
+
+            document.querySelector('#cart-btn').onclick = () =>{
+                cartItem.classList.toggle('active');
+            }
+            
+    </script>
+</body>
+
+</html>
