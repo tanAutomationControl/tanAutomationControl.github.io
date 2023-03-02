@@ -1,0 +1,25 @@
+body { margin:0;}
+section {
+  padding: 5em 1em;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+section > div {
+  margin: 2 em;
+
+}
+section:nth-child(1){
+  background:#f1f1f1;
+}
+section:nth-child(2){
+  background: radial-gradient(
+    #333,#111
+  );
+}
+section:nth-child(3){
+  background: #fff;
+}
+section:nth-child(4){
+  background: #161313;
+}
