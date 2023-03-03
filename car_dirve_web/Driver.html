@@ -17,14 +17,19 @@
 <body>
         <div class="wap">
             <div class="box">
+                <button class="btn" onclick="btn()" type="button">Stop!</button>
                 <input type="range" class="range" value="0"
                 min="-255" max="255" onchange="rangeSlider(this.value)"> 
                 <span id="rangeValue" class="value1"> 0</span>
                 
             </div>
             <div class="box2">
+                <div class="btn2">
+                    <button class="btn2" onclick="btn2()" type="button">Center!</button>
+                </div>
+                
                 <input type="range" class="range" value="0"
-                min="-75" max="75" onchange="rangeSlider2(this.value)"> 
+                min="-35" max="35" onchange="rangeSlider2(this.value)"> 
                 <span id="rangeValue2">0</span>
             </div>
         </div>
