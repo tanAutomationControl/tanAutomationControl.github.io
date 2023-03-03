@@ -61,8 +61,8 @@ body {
 }
 .box3
 {
-  float: right;
   transform: rotate(270deg);
+  float: right;
   position: relative;
   display: flex;
   justify-content: center;
@@ -87,14 +87,10 @@ body {
 .box4
 {
   float: right;
-  padding: 20px;
-  background: linear-gradient(to bottom,rgba(0,0,0,0.05),#edf1f4);
-  border-radius: 40px;
-  box-shadow: 15px 15px 20px rgba(0,0,0,0.1),
-  -15px -15px 20px #fff;
 }
 .btn
 {
+  width: 50%;
   transform: rotate(90deg);
   justify-content: center;
   align-items: center;
