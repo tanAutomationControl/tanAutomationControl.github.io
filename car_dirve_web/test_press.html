@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Long Press</title>
+    <style>
+      html {
+        font-size: 20px;
+        font-weight: 300;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      }
+      header {
+        margin-bottom: 2rem;
+      }
+      section {
+        padding: 3rem;
+      }
+      button {
+        background-color: white;
+        color: white;
+        border: 1px solid #333;
+        border-radius: 50%;
+        font-size: 1rem;
+        line-height: 30px;
+        height: 40px;
+        width: 40px;
+        text-align: center;
+        position: relative;
+        transition: all 0.4s linear;
+        outline: none;
+      }
+      button:active {
+        border-color: crimson;
+      }
+      .top,
+      .right,
+      .bottom,
+      .left {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translateX(0, 0);
+        opacity: 0.1;
+      }
+      .top.go {
+        transform: translate(0, -42px);
+        opacity: 1;
+      }
+      .right.go {
+        transform: translate(40px, 0);
+        opacity: 1;
+      }
+      .bottom.go {
+        transform: translate(0, 40px);
+        opacity: 1;
+      }
+      .left.go {
+        transform: translate(-42px, 0);
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Building a LongPress Event Handler</h1>
+      <h2>&nbsp;</h2>
+    </header>
+    <main>
+      <section id="one">
+        <button data-long="yes">👍</button>
+      </section>
+
+      <template id="emojis">
+        <button class="happy top">😀</button
+        ><button class="laughing right">🤪</button
+        ><button class="sad bottom">😭</button
+        ><button class="clapping left">👏</button>
+      </template>
+    </main>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        addClickTouch();
+      });
+
+      let timmy = null;
+      let timmyLong = null;
+      const delay = 800; //ms delay to be considered a long press
+
+      function addClickTouch() {
+        clearTimeout(timmy); //stop the longpress delay if it has started
+
+        if ('ontouchstart' in document.body) {
+          document.querySelectorAll('[data-long]').forEach((btn) => {
+            btn.addEventListener('touchstart', start, {
+              once: true,
+            });
+          });
+        } else {
+          document.querySelectorAll('[data-long]').forEach((btn) => {
+            btn.addEventListener('mousedown', start, {
+              once: true,
+            });
+          });
+        }
+      }
+
+      function start(ev) {
+        //handle the touchstart context menu
+        ev.preventDefault();
+
+        let btn = ev.target.closest('[data-long]');
+        btn.innerHTML = '👍'; //remove the other buttons
+
+        timmy = setTimeout(longPress.bind(btn), delay); // the LONG PRESS
+
+        btn.addEventListener('mouseup', addClickTouch);
+        btn.addEventListener('touchcancel', addClickTouch);
+      }
+
+      function longPress() {
+        let btn = this;
+        btn.removeEventListener('mouseup', addClickTouch);
+        btn.removeEventListener('touchcancel', addClickTouch);
+
+        //remove all the flyout buttons after delay if no interaction for 3 seconds
+        timmyLong = setTimeout(resetButtons.bind(btn), 3000);
+
+        let template = document.getElementById('emojis');
+        let content = template.content.cloneNode(true);
+        btn.appendChild(content);
+        btn.querySelectorAll('button').forEach((b) => {
+          if ('ontouchstart' in document.body) {
+            b.addEventListener('touchend', selected, {
+              capture: false,
+              once: true,
+            });
+          } else {
+            b.addEventListener('mouseup', selected, {
+              capture: false,
+              once: true,
+            });
+          }
+          setTimeout(function () {
+            b.classList.add('go');
+          }, 5);
+        });
+      }
+
+      function resetButtons() {
+        this.innerHTML = '👍';
+        addClickTouch();
+      }
+
+      function selected(ev) {
+        ev.stopImmediatePropagation(); //don't send the click to the main button
+        console.log('selected', ev.target);
+        clearTimeout(timmyLong); //we have interacted...
+        let b = ev.target; // <button class="top happy go">
+        let arr = Array.from(b.classList).filter(
+          (cls) =>
+            cls != 'go' &&
+            cls != 'top' &&
+            cls != 'right' &&
+            cls != 'bottom' &&
+            cls != 'left'
+        );
+        let match = arr[0]; //the selected class
+        document.querySelector('header h2').textContent = `You are ${match}`;
+        let btn = ev.target.parentElement;
+        btn.querySelectorAll('button').forEach((item) => {
+          //loop through the 4 child buttons
+          if (item.classList.contains(match)) {
+            setTimeout(
+              function (item) {
+                item.remove();
+                resetButtons.call(this);
+              }.bind(btn, item),
+              delay
+            );
+            //delay removing the selected one same length as the long press
+          } else {
+            item.remove();
+            //remove all the flyout buttons except the selected ones
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

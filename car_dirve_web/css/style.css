@@ -59,6 +59,20 @@ body {
   box-shadow: 15px 15px 20px rgba(0,0,0,0.1),
   -15px -15px 20px #fff;
 }
+.box3
+{
+  float: right;
+  transform: rotate(270deg);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(to bottom,rgba(0,0,0,0.05),#edf1f4);
+  border-radius: 40px;
+  box-shadow: 15px 15px 20px rgba(0,0,0,0.1),
+  -15px -15px 20px #fff;
+}
 .box2
 {
   width: 50%;
@@ -78,8 +92,7 @@ body {
   padding: 20px;
   background: linear-gradient(to bottom,rgba(0,0,0,0.05),#edf1f4);
   border-radius: 40px;
-  box-shadow: 15px 15px 20px rgba(0,0,0,0.1),
-  -15px -15px 20px #fff;
+  
 }
 .btn2
 {

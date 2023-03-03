@@ -20,20 +20,30 @@
             <a href="https://en.ctu.edu.vn/" class="logo">
                 <img src="https://tanautomationcontrol.github.io/DO_AN_IOT/images/ctu.png" alt="">
             </a>
+            <a href="https://www.facebook.com/MISCTU6789" class="logo">
+                <img src="./images/MIS.png" alt="">
+            </a>
         </div>
         
     </header>
         <div class="wap">
+            
+            <div class="box3">
+                <button class="btn" id="btn3"   type="button">DOWN</button>
+                <button class="btn" id="btn4"  type="button">UP</button>
+                <button class="btn" onclick="btn5()" type="button">Auto</button>
+               
+            </div>
             <div class="box">
-                <button class="btn" onclick="btn()" type="button">Stop!</button>
+                <button class="btn" onclick="btn()" type="button">Brakes!</button>
                 <input type="range" class="range" value="0"
-                min="-255" max="255" onchange="rangeSlider(this.value)"> 
+                min="1" max="255" onchange="rangeSlider(this.value)"> 
                 <span id="rangeValue" class="value1"> 0</span>
                 
             </div>
             <div class="box2">
                 <div class="btn2">
-                    <button class="btn2" onclick="btn2()" type="button">Center!</button>
+                <button class="btn2" onclick="btn2()"  type="button">Center!</button>
                 </div>
                 
                 <input type="range" class="range" value="0"
