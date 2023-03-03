@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, user-scale=no">
     <title>DRIVE_CAR</title>
-
+    
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
@@ -15,17 +15,21 @@
 </head>
 
 <body>
-        <div class="box">
-            <input type="range" class="range" value="0"
-            min="-255" max="255" onmousemove="rangeSlider(this.value)"> 
-            <span id="rangeValue" class="value1"> 0</span>
-            
+        <div class="wap">
+            <div class="box">
+                <input type="range" class="range" value="0"
+                min="-255" max="255" onchange="rangeSlider(this.value)"> 
+                <span id="rangeValue" class="value1"> 0</span>
+                
+            </div>
+            <div class="box2">
+                <input type="range" class="range" value="0"
+                min="-75" max="75" onchange="rangeSlider2(this.value)"> 
+                <span id="rangeValue2">0</span>
+            </div>
         </div>
-        <div class="box2">
-            <input type="range" class="range" value="0"
-            min="-75" max="75" onmousemove="rangeSlider2(this.value)"> 
-            <span id="rangeValue2">0</span>
-        </div>
+             
+       
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.10/firebase-database.js"></script>
