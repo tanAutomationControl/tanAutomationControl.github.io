@@ -39,7 +39,7 @@ function btn5 (){
   var btn4 = document.getElementById('btn4');
   btn3.addEventListener('touchstart', function(e){
     console.log("start1");
-    firebase.database().ref().child('PWM').set(Number(PWM));
+    firebase.database().ref().child('PWM').set(-Number(PWM));
 
   });
   btn3.addEventListener('touchend', function(e){
